@@ -39,12 +39,6 @@ const titleClickHandler = function (event) {
 
 }
   
-const links = document.querySelectorAll('.titles a');
-
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-}
-
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
@@ -72,11 +66,18 @@ function generateTitleLinks(){
     /* [DONE] create HTML of the link */
     
     const linkHTML = `<li><a href="#${articleId}"><span>${articleTitle}</span></a></li>`;
-    console.log(linkHTML);
   
     /* [DONE] insert link into titleList */
     
     document.querySelector(optTitleListSelector).insertAdjacentHTML("beforeend", linkHTML);    
+  }
+
+  /* Fix bug */
+  
+  const links = document.querySelectorAll('.titles a');
+
+  for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
   }
 }
 
