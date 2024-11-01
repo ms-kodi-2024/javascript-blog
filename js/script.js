@@ -9,7 +9,7 @@ const titleClickHandler = function (event) {
 
   const activeLinks = document.querySelectorAll('.titles a.active');
   
-  for (let activeLink of activeLinks) {
+  for (const activeLink of activeLinks) {
     activeLink.classList.remove('active');
   }
 
@@ -21,13 +21,13 @@ const titleClickHandler = function (event) {
 
   const activeArticles = document.querySelectorAll('.posts article.active');
 
-  for (let activeArticle of activeArticles) {
+  for (const activeArticle of activeArticles) {
     activeArticle.classList.remove('active');
   }
 
   /* [DONE] get 'href' attribute from the clicked link */
 
-  const articleSelector = clickedElement.getAttribute("href");
+  const articleSelector = clickedElement.getAttribute('href');
   
   /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
@@ -37,7 +37,7 @@ const titleClickHandler = function (event) {
 
   targetArticle.classList.add('active');
 
-}
+};
   
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
@@ -52,7 +52,7 @@ function generateTitleLinks(){
   /* for each article */
   const articles = document.querySelectorAll(optArticleSelector);
 
-  for (let article of articles) {
+  for (const article of articles) {
 
     /* [DONE] get the article id */
   
@@ -69,14 +69,14 @@ function generateTitleLinks(){
   
     /* [DONE] insert link into titleList */
     
-    document.querySelector(optTitleListSelector).insertAdjacentHTML("beforeend", linkHTML);    
+    document.querySelector(optTitleListSelector).insertAdjacentHTML('beforeend', linkHTML);    
   }
 
   /* Fix bug */
   
   const links = document.querySelectorAll('.titles a');
 
-  for (let link of links) {
+  for (const link of links) {
     link.addEventListener('click', titleClickHandler);
   }
 }
