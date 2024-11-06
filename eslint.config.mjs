@@ -1,28 +1,35 @@
 export default [
   {
     files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
-    rules: {
-      "prefer-const": "warn",
-      "no-constant-binary-expression": "error",
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 2015
+    },
+    "rules": {
       "indent": [
-          "error",
-          2
+        "error",
+        2
       ],
       "linebreak-style": [
-          "off"
+        "off"
       ],
       "quotes": [
-          "error",
-          "single",
-          {"allowTemplateLiterals": true}
+        "error",
+        "single",
+        {"allowTemplateLiterals": true}
       ],
       "semi": [
-          "error",
-          "always"
+        "error",
+        "always"
       ],
       "no-console": [
-          "off"
-      ]
+        "off"
+      ],
+      "no-prototype-builtins": ["off"]
     }
   }
 ];
