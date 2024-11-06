@@ -43,7 +43,7 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
 
-function generateTitleLinks(){
+function generateTitleLinks() {
 
   /* [DONE] remove contents of titleList */
 
