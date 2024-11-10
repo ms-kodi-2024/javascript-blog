@@ -80,6 +80,31 @@ body {
   font-size: 80px;
   line-height: 1;
   text-align: center;
+
+  animation: slide-in-out 8s ease-in-out infinite;
+  // opacity: 0;
+}
+
+@keyframes slide-in-out {
+  0% {
+    transform: translateX(-100%);
+    // opacity: 0;
+  }
+  
+  25% {
+    transform: translateX(0);
+    // opacity: 1;
+  }
+
+  75% {
+    transform: translateX(0);
+    // opacity: 1;
+  }
+
+  100% {
+    transform: translateX(100%);
+    // opacity: 0;
+  }
 }
 
 /* Lists */
