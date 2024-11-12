@@ -43,7 +43,8 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
-  optArticleAuthorSelector = '.post-author';
+  optArticleAuthorSelector = '.post-author',
+  optTagsListSelector = '.tags.list';
 
 function generateTitleLinks(customSelector = '', customAuthor = ''){
 
@@ -85,7 +86,10 @@ function generateTitleLinks(customSelector = '', customAuthor = ''){
 
 generateTitleLinks();
 
-function generateTags(){
+function generateTags() {
+  /* [NEW] create a new variable allTags with an empty array */
+  const allTags = [];
+
   /* [DONE] find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
 
@@ -96,7 +100,7 @@ function generateTags(){
     const tagsWrapper = article.querySelector(optArticleTagsSelector);
 
     /* [DONE] make html variable with empty string */
-    let html = '';
+    let linksHTML = '';
 
     /* [DONE] get tags from data-tags attribute */
     const articleTags = article.getAttribute('data-tags');
@@ -111,16 +115,28 @@ function generateTags(){
       const linkTag = `<li><a href='#tag-${tag}'>${tag}</a></li>`;
 
       /* [DONE] add generated code to html variable */
-      html = html + linkTag;
+      linksHTML = linksHTML + linkTag;
+
+      /* [NEW] check if this link is NOT already in allTags */
+      if(allTags.indexOf(linkTag) == -1){
+      /* [NEW] add generated code to allTags array */
+        allTags.push(linkTag);
+      }
 
       /* [DONE] END LOOP: for each tag */
     }
 
     /* [DONE] insert HTML of all the links into the tags wrapper */
-    tagsWrapper.innerHTML = html;
+    tagsWrapper.innerHTML = linksHTML;
 
   /* [DONE] END LOOP: for every article: */
   }
+
+  /* [NEW] find list of tags in right column */
+  const tagList = document.querySelector(optTagsListSelector);
+
+  /* [NEW] add html from allTags to tagList */
+  tagList.innerHTML = allTags.join(' ');
 }
 
 generateTags();
@@ -228,3 +244,4 @@ function addClickListenersToAuthors() {
 }
 
 addClickListenersToAuthors();
+
