@@ -8,6 +8,11 @@
 $color-light: #fff;
 $color-dark: #444;
 $color-logo: #FA6C65;
+$color-1: #1737da;
+$color-2: #58c61d;
+$color-3: #f2dc08;
+$color-4: #c308ae;
+$color-5: #d40101;
 
 $font-logo: 'Rock Salt', cursive;
 $font-header: 'IBM Plex Mono', sans-serif;
@@ -185,6 +190,43 @@ a {
   p {
     margin: 0 10px 0 0;
   }
+}
+
+/* Cloud of tags */
+
+.tag-size-1 {
+  font-size: 80%;
+  color: $color-1;
+  font-weight: 500;
+}
+
+.tag-size-2 {
+  font-size: 100%;
+  color: $color-2;
+  font-weight: 600;
+}
+
+.tag-size-3 {
+  font-size: 150%;
+  color: $color-3;
+  font-weight: 700;
+}
+
+.tag-size-4 {
+  font-size: 200%;
+  color: $color-4;
+  font-weight: 800;
+}
+
+.tag-size-5 {
+  font-size: 250%;
+  color: $color-5;
+  font-weight: 900;
+}
+
+.tags li {
+  display: inline-block;
+  padding: 0 5px 0 0;
 }
 
 @media(max-width: 787px) {
