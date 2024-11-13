@@ -102,7 +102,7 @@ function calculateTagsParams(tags) {
 }
 
 function calculateTagClass(count, params) {
-  const classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * optCloudClassCount + 1 );
+  const classNumber = Math.floor(((count - params.min) / (params.max - params.min)) * (optCloudClassCount - 1) + 1);
   return `${optCloudClassPrefix}${classNumber}`;
 }
 
